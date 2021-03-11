@@ -11,9 +11,9 @@ test("Should not allowed click button if isDisabled is present", () => {
 });
 
 test("Should render loading/spinner", () => {
-  const { container } = render(<Button isLoading></Button>);
+  const { container, getByText } = render(<Button isLoading></Button>);
 
-  //expect(getByText(/loading/i)).toBeInTheDocument();
+  expect(getByText(/loading/i)).toBeInTheDocument();
   expect(container.querySelector("span")).toBeInTheDocument();
 });
 
@@ -26,7 +26,7 @@ test("Should render <a> tag", () => {
 test("Should render <Link> component", () => {
   const { container } = render(
     <Router>
-      <Button href="" type="link" isExternal></Button>
+      <Button href="" type="link"></Button>
     </Router>
   );
 
